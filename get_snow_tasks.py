@@ -72,6 +72,8 @@ if __name__ == '__main__':
 
     tasks = get_open_tasks(assignment_group)
 
+    tasks_data = []
+
     for task in tasks:
 
         ritm_sys_id = task['request_item']['value']
@@ -94,6 +96,7 @@ if __name__ == '__main__':
         task_data['task_number'] = task['number']
         task_data['item_type'] = ritm_short_description
         task_data['task_variables'] = variables
+        tasks_data.append(task_data)
 
-    print(json.dumps(task_data, indent=2))
+    print(json.dumps(tasks_data, indent=2))
             
