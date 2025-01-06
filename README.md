@@ -6,9 +6,10 @@ The **ServiceNow Task Handler** is a Python script designed to automate the life
 ```mermaid
 graph TD
     A[Start] --> B[Process 1]
-    B --> C[Decision?]
+    B --> C{Decision?}
     C -->|Yes| D[Process 2]
     C -->|No| E[End]
+```
 
 ## Getting Started
 
