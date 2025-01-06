@@ -1,6 +1,6 @@
 # ServiceNow Task Handler
 
-The **ServiceNow Task Handler** is a Python script designed to automate the lifecycle of ServiceNow tasks. It continuously polls for new tasks, updates their status, processes them, and closes them out.
+Automate the fulfillment of ServiceNow tasks
 ---
 
 ### Process Diagram
@@ -11,12 +11,34 @@ Below is the process flow for the **ServiceNow Task Handler**, showing how tasks
 graph TD
     A[Start Task Handler] --> B[Check for Open Tasks]
     B -->|Tasks Found| C[Retrieve Task Variables]
-    B -->|No Tasks| F[Wait 15 Seconds]
+    B -->|No Tasks| F[Wait 10 Seconds]
     C --> D[Set Task to 'Work in Progress']
     D --> E[Execute Fulfillment Logic]
     E --> G[Close Task]
-    G --> B
+    G --> F
     F --> B
+```
+---
+
+### **Explanation of the Workflow**
+1. **Start Task Handler**:
+   - The script begins execution and enters a continuous loop to monitor for new tasks.
+2. **Check for Open Tasks**:
+   - The script queries the ServiceNow API for tasks assigned to the configured assignment group with a status of "Open."
+   - If no tasks are found, it waits for 10 seconds before rechecking.
+3. **Retrieve Task Variables**:
+   - If tasks are found, their associated variables are retrieved.
+4. **Set Task to 'Work in Progress'**:
+   - The task’s status is updated to "Work in Progress" to prevent duplicate handling.
+5. **Execute Fulfillment Logic**:
+   - Custom logic is applied to fulfill the task based on its variables.
+6. **Close Task**:
+   - The task’s status is updated to "Closed" after fulfillment.
+   - After closing, the script waits for 10 seconds before checking for new tasks.
+7. **Repeat**:
+   - The handler loops back to check for more open tasks.
+
+---
 
 ## Getting Started
 
@@ -86,6 +108,8 @@ If there are tasks to be fulfilled, the output will look like this:
 2025-01-06 14:51:02.534721 - Task fulfilled successfully
 ```
 
-### Customization
+---
+
+## Customization
 
 To tailor the **ServiceNow Task Handler** to your specific needs, you can add your own logic to fulfill tasks by modifying the `fulfill_task` function. This function is a placeholder for task-specific actions and can be extended or updated to handle various use cases.
