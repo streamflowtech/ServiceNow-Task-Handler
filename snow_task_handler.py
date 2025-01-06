@@ -142,14 +142,14 @@ def main():
                 task_data['task_variables'] = variables
                 tasks_data.append(task_data)
 
-                notify(1, 'Setting task {task["number"]} to "Work in Progress"')
+                notify(1, f'Setting task {task["number"]} to "Work in Progress"')
                 set_task_to_wip(task_data['task_sys_id'])
 
-                notify(1, 'Fulfilling task {task["number"]}')
+                notify(1, f'Fulfilling task {task["number"]}')
                 task_fulfillment = fulfill_task(task_data)
 
                 if task_fulfillment['result_code'] == 0:
-                    notify(1, 'Closing task {task["number"]}')
+                    notify(1, f'Closing task {task["number"]}')
                     close_task(task_data['task_sys_id'])
 
             notify(1, f'{task_verbiage.capitalize()} fulfilled successfully')
