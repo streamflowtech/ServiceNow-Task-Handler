@@ -88,24 +88,24 @@ Note: The -v will log to the console.  Remove this flag to run in silent mode
 When the script is run with -v option, if no tasks are found for fulfillment, the output will look like this:
 
 ```plaintext
-2025-01-06 14:31:14.204010 - Starting ServiceNow task handler
-2025-01-06 14:31:14.204050 - Getting all open tasks assigned to automation group
-2025-01-06 14:31:14.442560 - No tasks to fulfill
-2025-01-06 14:31:14.442596 - Sleeping for 10 seconds
+2025-01-05 19:31:14.204010 - Starting ServiceNow task handler
+2025-01-05 19:31:14.204050 - Getting all open tasks assigned to automation group
+2025-01-05 19:31:14.442560 - No tasks to fulfill
+2025-01-05 19:31:14.442596 - Sleeping for 10 seconds
 ```
 
 If there are tasks to be fulfilled, the output will look like this:
 
 ```plaintext
-2025-01-06 14:51:01.021640 - Starting ServiceNow task handler
-2025-01-06 14:51:01.021676 - Getting all open tasks assigned to automation group
-2025-01-06 14:51:01.311920 - 1 task retrieved for fulfillment
-2025-01-06 14:51:01.311963 - Working on task SCTASK0010007
-2025-01-06 14:51:01.311970 - Getting item variables for task SCTASK0010007
-2025-01-06 14:51:01.556648 - Setting task SCTASK0010007 to "Work in Progress"
-2025-01-06 14:51:01.877094 - Fulfilling task SCTASK0010007
-2025-01-06 14:51:02.206688 - Closing task SCTASK0010007
-2025-01-06 14:51:02.534721 - Task fulfilled successfully
+2025-01-05 19:51:01.021640 - Starting ServiceNow task handler
+2025-01-05 19:51:01.021676 - Getting all open tasks assigned to automation group
+2025-01-05 19:51:01.311920 - 1 task retrieved for fulfillment
+2025-01-05 19:51:01.311963 - Working on task SCTASK0010007
+2025-01-05 19:51:01.311970 - Getting item variables for task SCTASK0010007
+2025-01-05 19:51:01.556648 - Setting task SCTASK0010007 to "Work in Progress"
+2025-01-05 19:51:01.877094 - Fulfilling task SCTASK0010007
+2025-01-05 19:51:02.206688 - Closing task SCTASK0010007
+2025-01-05 19:51:02.534721 - Task fulfilled successfully
 ```
 
 ---
