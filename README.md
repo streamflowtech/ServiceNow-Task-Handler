@@ -57,6 +57,20 @@ When the script is run with -v option, if no tasks are found for fulfillment, th
 2025-01-06 14:31:14.442596 - Sleeping for 10 seconds
 ```
 
+If there are tasks to be fulfilled, the output will look like this:
+
+```plaintext
+2025-01-06 14:51:01.021640 - Starting ServiceNow task handler
+2025-01-06 14:51:01.021676 - Getting all open tasks assigned to automation group
+2025-01-06 14:51:01.311920 - 1 task retrieved for fulfillment
+2025-01-06 14:51:01.311963 - Working on task SCTASK0010007
+2025-01-06 14:51:01.311970 - Getting item variables for task SCTASK0010007
+2025-01-06 14:51:01.556648 - Setting task SCTASK0010007 to "Work in Progress"
+2025-01-06 14:51:01.877094 - Fulfilling task SCTASK0010007
+2025-01-06 14:51:02.206688 - Closing task SCTASK0010007
+2025-01-06 14:51:02.534721 - Task fulfilled successfully
+```
+
 ### Customization
 
 To tailor the **ServiceNow Task Handler** to your specific needs, you can add your own logic to fulfill tasks by modifying the `fulfill_task` function. This function is a placeholder for task-specific actions and can be extended or updated to handle various use cases.
