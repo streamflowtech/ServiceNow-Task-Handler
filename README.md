@@ -43,6 +43,13 @@ To start the task handler, run:
    ```
 Note: The -v will log to the console.  Remove this flag to run in silent mode
 
+When the script is run with -v option, if no tasks are found for fulfillment, the output will look like this:
+
+2025-01-06 14:31:14.204010 - Starting ServiceNow task handler
+2025-01-06 14:31:14.204050 - Getting all open tasks assigned to automation group
+2025-01-06 14:31:14.442560 - No tasks to fulfill
+2025-01-06 14:31:14.442596 - Sleeping for 10 seconds
+
 ### Customization
 
 To tailor the **ServiceNow Task Handler** to your specific needs, you can add your own logic to fulfill tasks by modifying the `fulfill_task` function. This function is a placeholder for task-specific actions and can be extended or updated to handle various use cases.
