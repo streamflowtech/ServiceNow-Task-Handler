@@ -3,6 +3,13 @@
 The **ServiceNow Task Handler** is a Python script designed to automate the lifecycle of ServiceNow tasks. It continuously polls for new tasks, updates their status, processes them, and closes them out.
 ---
 
+```mermaid
+graph TD
+    A[Start] --> B[Process 1]
+    B --> C[Decision?]
+    C -->|Yes| D[Process 2]
+    C -->|No| E[End]
+
 ## Getting Started
 
 ### Prerequisites
