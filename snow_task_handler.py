@@ -44,10 +44,7 @@ def get_open_tasks(assignment_group):
 
     url = f'{base_url}/sc_task'
     params = {
-        'sysparm_fields': (
-            'number,sys_id,request_item,'
-            'request_item.cat_item.name'
-        ),
+        'sysparm_fields': 'number,sys_id,request_item,request_item.cat_item.name',
         'sysparm_query': f'assignment_group.name={assignment_group}^state=1'
     }
     response = call_handler('get', url, params)
@@ -58,10 +55,7 @@ def get_ritm_vars(ritm_sys_id):
 
     url = f'{base_url}/sc_item_option_mtom'
     params = {
-        'sysparm_fields': (
-            'sc_item_option.value',
-            'sc_item_option.item_option_new.name'
-        ),
+        'sysparm_fields': 'sc_item_option.value,sc_item_option.item_option_new.name',
         'sysparm_query': f'request_item={ritm_sys_id}'
     }
     response = call_handler('get', url, params)
