@@ -45,6 +45,7 @@ Note: The -v will log to the console.  Remove this flag to run in silent mode
 
 When the script is run with -v option, if no tasks are found for fulfillment, the output will look like this:
 
+```plaintext
 2025-01-06 14:31:14.204010 - Starting ServiceNow task handler
 2025-01-06 14:31:14.204050 - Getting all open tasks assigned to automation group
 2025-01-06 14:31:14.442560 - No tasks to fulfill
